@@ -73,9 +73,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar: Copyright and Credits */}
-        <div className="mt-8 pt-8 border-t border-white/20 flex justify-between items-center text-white/70 text-sm">
+        <div className="mt-8 pt-8 border-t border-white/20 flex justify-center items-center text-white/70 text-sm">
           <p>&copy; {new Date().getFullYear()} Divy Silver. All rights reserved.</p>
-          <Button variant="outline" size="sm" className="bg-transparent text-white border-white/50 hover:bg-white hover:text-black">Design By ▲</Button>
         </div>
       </div>
     </footer>
