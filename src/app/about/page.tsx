@@ -1,13 +1,13 @@
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { Hero } from '@/components/hero';
+import { OurStory } from '@/components/our-story';
 
-export default function Home() {
+export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-grow">
-        <Hero />
+        <OurStory />
       </main>
       <Footer />
     </div>

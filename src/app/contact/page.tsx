@@ -1,13 +1,13 @@
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { Hero } from '@/components/hero';
+import { BlessingGenerator } from '@/components/blessing-generator';
 
-export default function Home() {
+export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-grow">
-        <Hero />
+        <BlessingGenerator />
       </main>
       <Footer />
     </div>
