@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer id="contact" className="bg-secondary">
+    <footer className="bg-secondary">
       <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-1">
@@ -13,9 +13,10 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold font-headline mb-4">Quick Links</h3>
             <ul className="space-y-2">
+              <li><Link href="#home" className="hover:text-primary transition-colors">Home</Link></li>
               <li><Link href="#product" className="hover:text-primary transition-colors">Product</Link></li>
               <li><Link href="#about" className="hover:text-primary transition-colors">About</Link></li>
-              <li><Link href="#blessing" className="hover:text-primary transition-colors">AI Blessing</Link></li>
+              <li><Link href="#contact" className="hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
           <div>
