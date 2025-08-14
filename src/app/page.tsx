@@ -10,9 +10,15 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-grow">
-        <Hero />
-        <ProductList />
-        <OurStory />
+        <div id="home">
+          <Hero />
+        </div>
+        <div id="product">
+          <ProductList />
+        </div>
+        <div id="about">
+          <OurStory />
+        </div>
         <BlessingGenerator />
       </main>
       <Footer />

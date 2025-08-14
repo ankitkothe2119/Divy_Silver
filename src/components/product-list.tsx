@@ -3,7 +3,7 @@ import { ProductCard } from './product-card';
 
 export function ProductList() {
   return (
-    <section id="collections" className="py-16 sm:py-24 bg-background">
+    <section className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">Our Sacred Collections</h2>

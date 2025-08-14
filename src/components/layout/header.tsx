@@ -11,11 +11,14 @@ export function Header() {
             <span className="font-bold text-lg font-headline">Divyam Murti</span>
           </Link>
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-            <Link href="#collections" className="transition-colors hover:text-foreground/80 text-foreground/60">
-              Collections
+            <Link href="#home" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              Home
             </Link>
-            <Link href="#our-story" className="transition-colors hover:text-foreground/80 text-foreground/60">
-              Our Story
+            <Link href="#product" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              Product
+            </Link>
+            <Link href="#about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+              About
             </Link>
             <Link href="#contact" className="transition-colors hover:text-foreground/80 text-foreground/60">
               Contact

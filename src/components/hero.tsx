@@ -21,7 +21,7 @@ export function Hero() {
           Experience spiritual elegance with our handcrafted Murtis, where sacred tradition meets timeless artistry.
         </p>
         <Button asChild size="lg" className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-6 rounded-full shadow-lg transition-transform transform hover:scale-105">
-          <Link href="#collections">Explore Collections</Link>
+          <Link href="#product">Explore Collections</Link>
         </Button>
       </div>
     </section>

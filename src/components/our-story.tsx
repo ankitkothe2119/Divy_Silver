@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export function OurStory() {
   return (
-    <section id="our-story" className="py-16 sm:py-24 bg-secondary">
+    <section className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
