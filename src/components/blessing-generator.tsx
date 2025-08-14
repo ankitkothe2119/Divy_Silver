@@ -78,8 +78,8 @@ export function BlessingGenerator() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Card className="max-w-3xl mx-auto shadow-lg border-border/60">
           <CardHeader className="text-center">
-            <div className="mx-auto bg-accent/10 p-3 rounded-full w-fit mb-4">
-               <Sparkles className="h-8 w-8 text-accent"/>
+            <div className="mx-auto bg-primary/10 p-3 rounded-full w-fit mb-4">
+               <Sparkles className="h-8 w-8 text-primary"/>
             </div>
             <CardTitle className="text-3xl font-headline">AI-Powered Blessing</CardTitle>
             <CardDescription className="text-lg mt-2 text-muted-foreground">
@@ -143,7 +143,7 @@ export function BlessingGenerator() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold" disabled={isLoading}>
+                <Button type="submit" size="lg" className="w-full font-semibold" disabled={isLoading}>
                   {isLoading ? "Generating..." : "Receive Your Blessing"}
                 </Button>
               </form>
