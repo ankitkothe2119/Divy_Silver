@@ -1,10 +1,16 @@
+/**
+ * @fileoverview This component provides an interactive form for users to generate a personalized AI blessing.
+ * It manages form state, handles submission, communicates with the server action, and displays the result.
+ * This is a client component, indicated by the "use client" directive.
+ */
+
 "use client";
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { murtis } from "@/lib/murtis";
+import { murtis } from "@/lib/murtis"; // Data for Murti dropdown
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -26,9 +32,10 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sparkles } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { getBlessingAction } from "@/app/actions";
-import { Skeleton } from "@/components/ui/skeleton";
+import { getBlessingAction } from "@/app/actions"; // Server action
+import { Skeleton } from "@/components/ui/skeleton"; // For loading state
 
+// Defines the validation schema for the form using Zod.
 const blessingFormSchema = z.object({
   murtiName: z.string({
     required_error: "Please select a Murti.",
@@ -41,13 +48,23 @@ const blessingFormSchema = z.object({
   }),
 });
 
+// Defines the TypeScript type based on the Zod schema.
 type BlessingFormValues = z.infer<typeof blessingFormSchema>;
 
+/**
+ * The BlessingGenerator component renders the form and handles the logic
+ * for the AI blessing feature.
+ * @returns {JSX.Element} The rendered form and result display.
+ */
 export function BlessingGenerator() {
+  // State to manage loading status during AI generation.
   const [isLoading, setIsLoading] = useState(false);
+  // State to store the generated blessing message.
   const [blessing, setBlessing] = useState<string | null>(null);
+  // Hook for displaying toast notifications (e.g., for errors).
   const { toast } = useToast();
 
+  // Initialize react-hook-form with the Zod resolver for validation.
   const form = useForm<BlessingFormValues>({
     resolver: zodResolver(blessingFormSchema),
     defaultValues: {
@@ -56,19 +73,26 @@ export function BlessingGenerator() {
     },
   });
 
+  /**
+   * Handles the form submission.
+   * @param {BlessingFormValues} data - The validated form data.
+   */
   async function onSubmit(data: BlessingFormValues) {
     setIsLoading(true);
     setBlessing(null);
+    // Call the server action to get the blessing.
     const result = await getBlessingAction(data);
     setIsLoading(false);
 
     if (result.error) {
+      // Display an error toast if something went wrong.
       toast({
         variant: "destructive",
         title: "Error",
         description: result.error,
       });
     } else if (result.blessing) {
+      // Set the blessing state to display the result.
       setBlessing(result.blessing);
     }
   }
@@ -89,6 +113,7 @@ export function BlessingGenerator() {
           <CardContent>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                {/* Murti Selection Field */}
                 <FormField
                   control={form.control}
                   name="murtiName"
@@ -113,6 +138,7 @@ export function BlessingGenerator() {
                     </FormItem>
                   )}
                 />
+                {/* User Name Field */}
                 <FormField
                   control={form.control}
                   name="userName"
@@ -126,6 +152,7 @@ export function BlessingGenerator() {
                     </FormItem>
                   )}
                 />
+                {/* User Intention Field */}
                 <FormField
                   control={form.control}
                   name="userIntention"
@@ -149,6 +176,7 @@ export function BlessingGenerator() {
               </form>
             </Form>
 
+            {/* Display loading skeletons while the AI is working. */}
             {isLoading && (
                <div className="mt-8 space-y-4">
                   <p className="text-center text-muted-foreground">Generating your personal blessing...</p>
@@ -158,6 +186,7 @@ export function BlessingGenerator() {
                </div>
             )}
 
+            {/* Display the generated blessing once it's available. */}
             {blessing && !isLoading && (
               <div className="mt-8 p-6 bg-secondary rounded-lg border border-primary/20">
                 <h3 className="font-headline text-xl text-primary mb-2">A Divine Message for You:</h3>

@@ -1,6 +1,15 @@
+/**
+ * @fileoverview This component displays a list of all products in a grid layout.
+ * It imports product data and maps over it to render a ProductCard for each item.
+ */
+
 import { murtis } from '@/lib/murtis';
 import { ProductCard } from './product-card';
 
+/**
+ * The ProductList component renders the main section of the products page.
+ * @returns {JSX.Element} A section containing a title, description, and a grid of products.
+ */
 export function ProductList() {
   return (
     <section className="py-16 sm:py-24 bg-background">
@@ -12,6 +21,7 @@ export function ProductList() {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Map over the murtis array and render a ProductCard for each one */}
           {murtis.map((murti) => (
             <ProductCard key={murti.id} murti={murti} />
           ))}
