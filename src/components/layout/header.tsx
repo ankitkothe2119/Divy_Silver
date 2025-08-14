@@ -20,7 +20,7 @@ export function Header() {
         <div className="mr-4 flex">
           {/* Site Title/Logo linking to the homepage */}
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold text-lg font-headline">Divyam Murti</span>
+            <span className="font-bold text-lg font-headline">Divy Silver</span>
           </Link>
           {/* Main navigation links, hidden on smaller screens */}
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">

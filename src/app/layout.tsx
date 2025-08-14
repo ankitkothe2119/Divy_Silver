@@ -12,7 +12,7 @@ import './globals.css';
  * Metadata for the website, used for SEO and browser tab information.
  */
 export const metadata: Metadata = {
-  title: 'Divyam Murti - Sacred Silver Murtis',
+  title: 'Divy Silver - Sacred Silver Murtis',
   description: 'Exquisite silver religious figurines (Murtis), crafted with devotion and spiritual significance.',
 };
 

@@ -1,6 +1,6 @@
-# Divyam Murti - Sacred Silver Murtis
+# Divy Silver - Sacred Silver Murtis
 
-This is a Next.js web application for Divyam Murti, a brand specializing in exquisite silver religious figurines. The website showcases products, tells the company's story, and includes an interactive AI-powered feature for generating personalized blessings.
+This is a Next.js web application for Divy Silver, a brand specializing in exquisite silver religious figurines. The website showcases products, tells the company's story, and includes an interactive AI-powered feature for generating personalized blessings.
 
 ## Tech Stack
 
